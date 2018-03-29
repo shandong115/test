@@ -1,0 +1,5 @@
+2018-03-22 14:36:37,482 DEBUG test.py 7 27344 ##debug message
+2018-03-22 14:36:37,482 INFO test.py 8 27344 ##info message
+2018-03-22 14:36:37,482 WARNING test.py 9 27344 ##warn message
+2018-03-22 14:36:37,482 ERROR test.py 10 27344 ##error message
+2018-03-22 14:36:37,482 CRITICAL test.py 11 27344 ##critical message

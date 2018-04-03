@@ -7,6 +7,7 @@ import re
 import base64
 import json
 import pika
+from read_pipe import *
 
 
 def socket_service():
@@ -59,24 +60,39 @@ def switch_data(data):
 def deal_data(conn, addr):
     print 'Accept new connection from {0}'.format(addr)
 
-    conn.send('Hi dayou, Welcome to the server!')
+	#conn.send('Hi dayou, Welcome to the server!')
+    head=conn.recv(8)
+    lenght = int(head)
+    print("head=%s|len=%d"%(head,lenght))
 
     while True:     
         print 'start receiving...'
         img_64 = ''
-        dataa = ''
+        ll = 0
         
         while True:
+#            print("recv...")
             data = conn.recv(1024)
+            ll += len(data)
+#            print("recvdata len %d, total len %d"%(len(data),ll))
 
+            if ll>=lenght:
+				print("end recv...")
+				img_64 += data
+#print("recv data:"+str(img_64))
+				switch_data(img_64)
+				img_64 = ''
+				break
+				
             if data != '':
                 img_64 += data
             else:
+				print("end recv...")
 				switch_data(img_64)
 				img_64 = ''
 				break
 
-        print 'end receive...'
+        conn.send(read_pipe())
         conn.close()
         sys.exit()
 

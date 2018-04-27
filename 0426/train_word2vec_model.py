@@ -32,6 +32,6 @@ if __name__ == '__main__':
                      workers=multiprocessing.cpu_count())
 
     model.save(outp1)
-	model.wv.save_word2vec_format(outp2, binary=False)
+    model.wv.save_word2vec_format(outp2, binary=False)
 
 #python train_word2vec_model.py zh.jian.wiki.seg.txt wiki.zh.model wiki.zh.vector

@@ -17,6 +17,7 @@ def socket_service():
         # 设置套接字选项的值
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.bind(('192.168.22.159', 6666))
+#s.bind(('127.0.0.1', 6666))
         s.listen(10)
     # 错误处理
     except socket.error as msg:

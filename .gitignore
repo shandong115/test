@@ -1,3 +1,6 @@
 */*.txt
 */*.bz2
+*/*.model
+*/*.vector
+*/*.npy
 .ipynb_checkpoints

@@ -44,3 +44,9 @@ for d in w:
 			w.set_description(u'已获取%s篇文章'%i)
 
 f.close()
+
+
+#pip install gensim
+#pip install opencc-python-reimplemented
+#pip install tqdm
+#python wiki.py zhwiki-20180401-pages-articles-multistream.xml.bz2 wiki_zh_tw.txt

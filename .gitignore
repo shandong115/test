@@ -3,4 +3,5 @@
 */*.model
 */*.vector
 */*.npy
+*/*.bin
 .ipynb_checkpoints
